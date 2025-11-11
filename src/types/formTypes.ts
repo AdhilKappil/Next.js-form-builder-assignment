@@ -11,3 +11,14 @@ export interface ValidationErrors {
   email?: string;
   phone?: string;
 }
+
+
+export interface FormInputProps {
+  label: string;
+  name: string;
+  type?: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  error?: string;
+  maxLength?: number;
+}

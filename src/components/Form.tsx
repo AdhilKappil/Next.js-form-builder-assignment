@@ -2,6 +2,7 @@
 import React, { useState, useContext } from "react";
 import { FormData, ValidationErrors } from "../types/formTypes";
 import { FormContext } from "../context/FormContext";
+import FormInput from "./FormInput";
 
 const Form = () => {
       const { setFormData } = useContext(FormContext)!;
@@ -71,80 +72,69 @@ const Form = () => {
         setErrors({});
     };
 
-    return (
-        <form
-            onSubmit={handleSubmit}
-            className="grid gap-2 p-5 w-100"
+   return (
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white rounded-2xl p-5 w-full"
+    >
+      <h2 className="text-2xl font-semibold text-gray-700 text-center">
+        Form Builder
+      </h2>
+
+      <FormInput
+        label="Name"
+        name="name"
+        value={formValues.name}
+        onChange={handleChange}
+        error={errors.name}
+        maxLength={50}
+      />
+
+      <FormInput
+        label="Age"
+        name="age"
+        type="number"
+        value={formValues.age}
+        onChange={handleChange}
+        error={errors.age}
+      />
+
+      <FormInput
+        label="Email"
+        name="email"
+        type="email"
+        value={formValues.email}
+        onChange={handleChange}
+        error={errors.email}
+      />
+
+      <FormInput
+        label="Phone"
+        name="phone"
+        type="text"
+        value={formValues.phone}
+        onChange={handleChange}
+        error={errors.phone}
+        maxLength={10}
+      />
+
+      <div className="flex justify-between pt-4">
+        <button
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition"
         >
-            <h2 className="text-2xl font-semibold text-gray-700 text-center">
-                Form Builder
-            </h2>
-
-            <div>
-                <label className="block text-gray-600 font-medium">Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    value={formValues.name}
-                    onChange={handleChange}
-                    className="border p-2 w-full rounded-md focus:outline-none focus:ring"
-                />
-                {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-            </div>
-
-            <div>
-                <label className="block text-gray-600 font-medium">Age</label>
-                <input
-                    type="text"
-                    name="age"
-                    value={formValues.age}
-                    onChange={handleChange}
-                    className="border p-2 w-full rounded-md focus:outline-none focus:ring"
-                />
-                {errors.age && <p className="text-red-500 text-sm">{errors.age}</p>}
-            </div>
-
-            <div>
-                <label className="block text-gray-600 font-medium">Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={formValues.email}
-                    onChange={handleChange}
-                    className="border p-2 w-full rounded-md focus:outline-none focus:ring"
-                />
-                {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-            </div>
-
-            <div>
-                <label className="block text-gray-600 font-medium">Phone</label>
-                <input
-                    type="text"
-                    name="phone"
-                    value={formValues.phone}
-                    onChange={handleChange}
-                    className="border p-2 w-full rounded-md focus:outline-none focus:ring"
-                />
-                {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
-            </div>
-
-            <div className="flex justify-between mt-4">
-                <button
-                    type="submit"
-                    className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
-                >
-                    Submit
-                </button>
-                <button
-                    type="button"
-                    onClick={handleReset}
-                    className="bg-gray-400 text-white px-4 py-2 rounded-md hover:bg-gray-500 transition"
-                >
-                    Reset
-                </button>
-            </div>
-        </form>
-    );
+          Submit
+        </button>
+        <button
+          type="button"
+          onClick={handleReset}
+          className="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition"
+        >
+          Reset
+        </button>
+      </div>
+    </form>
+  );
 };
 
 export default Form;
