@@ -19,8 +19,8 @@ const Form = () => {
         // ✅ Name validation
         if (!formValues.name.trim()) {
             newErrors.name = "Name is required";
-        } else if (formValues.name.length < 2) {
-            newErrors.name = "Name must be at least 2 characters";
+        } else if (formValues.name.length < 2 || formValues.name.length >50) {
+            newErrors.name = "Name must between 2 - 50 characters";
         }
 
         // ✅ Age validation
@@ -30,7 +30,8 @@ const Form = () => {
             newErrors.age = "Age must be a number";
         } else if (Number(formValues.age) < 0) {
             newErrors.age = "Age cannot be negative";
-        }
+        } else if (Number(formValues.age) > 120)
+        newErrors.age = "Age must be less than 120";
 
         // ✅ Email validation
         if (!formValues.email.trim()) {
