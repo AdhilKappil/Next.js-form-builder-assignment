@@ -66,6 +66,7 @@ const Form = () => {
 
     const handleReset = () => {
         setFormValues({ name: "", age: "", email: "", phone: "" });
+        setFormData(null);
         setErrors({});
     };
 
