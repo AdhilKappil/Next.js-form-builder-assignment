@@ -27,7 +27,6 @@ const Form = () => {
 
         if (Object.keys(validationErrors).length === 0) {
             setFormData(formValues);
-            setFormData(formValues);
             setFormValues({ name: "", age: "", email: "", phone: "" });
             setErrors({});
         }

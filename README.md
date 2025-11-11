@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧩 Form Builder Assignment
 
-## Getting Started
+A React + Next.js form component that validates user inputs and displays the submitted data on the same page.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Next.js 
+- TypeScript  
+- Tailwind CSS  
+- Context API for global state management  
+- Custom validation logic (no third-party form libraries)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📋 Features
 
-## Learn More
+- Four input fields — Name, Age, Email, and Phone Number  
+- Custom validation with clear, inline error messages  
+- Context-based data management for global state  
+- Reset button clears both form and displayed data  
+- Displays submitted data beside the form after successful submission  
+- Responsive and clean UI with Tailwind CSS  
+- Reusable input component (DRY code structure)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🧠 Folder Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+src/  
+ ├── app/ → page.tsx (main entry)  
+ ├── components/ → Form.tsx, FormInput.tsx, DisplayData.tsx  
+ ├── context/ → FormContext.tsx  
+ ├── utils/ → validateForm.ts  
+ ├── types/ → formTypes.ts  
+ └── styles/ → globals.css  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚙️ How to Clone and Use
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Go to your GitHub profile and fork or copy the repository link.  
+2. Open your terminal and navigate to the folder where you want to store the project.  
+3. Type the command:   
+   `https://github.com/AdhilKappil/Next.js-form-builder-assignment.git`
+4. Once the cloning is complete, go inside the folder using:  
+   `cd form-builder-assignment`  
+5. Install all required dependencies by running:  
+   `npm install`  
+6. Start the project with:  
+   `npm run dev`  
+7. Open your browser and go to **http://localhost:3000** to view the form.  
+8. Fill out the form and submit it — the submitted data will appear beside the form.  
+9. Use the reset button to clear both the form inputs and displayed data. 
+
+---
+
+### 🏁 Notes
+
+- No external form libraries such as Formik, React Hook Form, or Yup are used.  
+- All validations are implemented manually for better understanding.  
+- Project follows clean code standards and TypeScript best practices.
